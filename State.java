@@ -2,9 +2,9 @@ import java.util.ArrayList;
 
 abstract class State {
 
-    public String name = "";
-    public ArrayList<ArrayList<String>> transitions = new ArrayList<>();
-    public ArrayList<String> finalStates = new ArrayList<>();
+    public String name;
+    public ArrayList<ArrayList<String>> transitions;
+    public ArrayList<String> finalStates;
     
     public State(String name, ArrayList<ArrayList<String>> transitions, ArrayList<String> finalStates){
         this.name = name;
