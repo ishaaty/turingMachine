@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-abstract class State {
+class State {
 
     public String name;
     public ArrayList<ArrayList<String>> transitions;
