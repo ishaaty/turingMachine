@@ -9,8 +9,10 @@ public class Tape<E> {
         list = input;
     }
 
-    public void moveLeft() { // need to account for adding extra tape to the left side
-        pos--;
+    public void moveLeft() {
+        if (pos != 0) {
+            pos--;
+        }
     }
 
     public void moveRight() {
