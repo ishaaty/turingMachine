@@ -3,10 +3,10 @@ import java.util.ArrayList;
 class State {
 
     public String name;
-    public ArrayList<ArrayList<String>> transitions;
+    public ArrayList<Transition> transitions;
     public ArrayList<String> finalStates;
     
-    public State(String name, ArrayList<ArrayList<String>> transitions, ArrayList<String> finalStates){
+    public State(String name, ArrayList<Transition> transitions, ArrayList<String> finalStates){
         this.name = name;
         this.transitions = transitions;
         this.finalStates = finalStates;
