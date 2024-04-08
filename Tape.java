@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Tape {
     private ArrayList<Boolean> list = new ArrayList<>();
     private pos = 0;
