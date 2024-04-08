@@ -1,32 +1,32 @@
 import java.util.ArrayList;
 
-public class Tape {
-    private ArrayList<Boolean> list = new ArrayList<>();
-    private pos = 0;
+public class Tape<E> {
+    private ArrayList<E> list = new ArrayList<>();
+    private int pos = 0;
 
 
-    public Tape(input) {
+    public Tape(ArrayList<E> input) {
         list = input;
     }
 
-    public moveLeft() { // need to account for adding extra tape to the left side
+    public void moveLeft() { // need to account for adding extra tape to the left side
         pos--;
     }
 
-    public moveRight() {
+    public void moveRight() {
         pos++;
     }
 
-    public read() {
+    public E read() {
         return list.get(pos);
     }
 
-    public write(input) {
+    public void write(E input) {
         list.set(pos, input);
     }
 
-    public toString() {
-        list.toString();
+    public String toString() {
+        return list.toString();
     }
 
 }
