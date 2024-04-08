@@ -1,11 +1,11 @@
 import java.util.ArrayList;
 
-public class Tape<E> {
-    private ArrayList<E> list = new ArrayList<>();
+public class Tape {
+    private ArrayList<String> list = new ArrayList<>();
     private int pos = 0;
 
 
-    public Tape(ArrayList<E> input) {
+    public Tape(ArrayList<String> input) {
         list = input;
     }
 
@@ -19,11 +19,11 @@ public class Tape<E> {
         pos++;
     }
 
-    public E read() {
+    public String read() {
         return list.get(pos);
     }
 
-    public void write(E input) {
+    public void write(String input) {
         list.set(pos, input);
     }
 
