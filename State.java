@@ -13,14 +13,11 @@ class State {
     }
 
     public boolean isFinalState(){
-
         for (int i = 0; i < finalStates.size(); i++){
             if (finalStates.get(i) == name){
                 return true;
             }
         }
         return false;
-
     }
-
 }
