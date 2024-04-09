@@ -45,7 +45,7 @@ public class Tape {
     }
 
     public String oneCount() {
-        return "" + (list.size() - 2);
+        return "" + (list.size() - 2) + " ones";
     }
 
 }
