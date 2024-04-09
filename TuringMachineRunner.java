@@ -24,7 +24,6 @@ public class TuringMachineRunner {
         startingTape.add("6");
         startingTape.add("6");
         startingTape.add("6");
-        startingTape.add("null");
         Tape tape = new Tape(startingTape);
 
 
@@ -68,7 +67,7 @@ public class TuringMachineRunner {
 
         symbols = new ArrayList<>();
         symbols.add("null");
-        transition = new Transition(symbols, "epsilon", "epsilon", "S2");
+        transition = new Transition(symbols, "1", "epsilon", "S2");
         s0Transitions.add(transition);
 
         State s0State = new State("S0", s0Transitions, finalStates);
@@ -124,7 +123,7 @@ public class TuringMachineRunner {
 
         symbols = new ArrayList<>();
         symbols.add("null");
-        transition = new Transition(symbols, "epsilon", "R", "S0");
+        transition = new Transition(symbols, "1", "R", "S0");
         s1Transitions.add(transition);
 
         State s1State = new State("S1", s1Transitions, finalStates);
