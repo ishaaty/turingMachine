@@ -1,13 +1,29 @@
 import java.util.ArrayList;
 
-// Γ = {null, 1, 2, 3, 4, 5} --> 6 symbols
-// 11 states
+// Γ = {null, 1, 2, 3, 4, 5, 6} --> 7 symbols in alphabet
+// 13 states
 
 
 public class TuringMachineRunner {
     public static void main(String[] args) {
         ArrayList<String> startingTape = new ArrayList<>();
-        startingTape.add("5");
+        startingTape.add("6");
+        startingTape.add("6");
+        startingTape.add("6");
+        startingTape.add("6");
+        startingTape.add("6");
+
+        startingTape.add("6");
+        startingTape.add("6");
+        startingTape.add("6");
+        startingTape.add("6");
+        startingTape.add("6");
+
+        startingTape.add("6");
+        startingTape.add("6");
+        startingTape.add("6");
+        startingTape.add("6");
+        startingTape.add("6");
         startingTape.add("null");
         Tape tape = new Tape(startingTape);
 
@@ -46,6 +62,11 @@ public class TuringMachineRunner {
         s0Transitions.add(transition);
 
         symbols = new ArrayList<>();
+        symbols.add("6");
+        transition = new Transition(symbols, "5", "R", "S16");
+        s0Transitions.add(transition);
+
+        symbols = new ArrayList<>();
         symbols.add("null");
         transition = new Transition(symbols, "epsilon", "epsilon", "S2");
         s0Transitions.add(transition);
@@ -63,6 +84,7 @@ public class TuringMachineRunner {
         symbols.add("3");
         symbols.add("4");
         symbols.add("5");
+        symbols.add("6");
         transition = new Transition(symbols, "epsilon", "R", "S12");
         s12Transitions.add(transition);
 
@@ -96,6 +118,7 @@ public class TuringMachineRunner {
         symbols.add("3");
         symbols.add("4");
         symbols.add("5");
+        symbols.add("6");
         transition = new Transition(symbols, "epsilon", "L", "S1");
         s1Transitions.add(transition);
 
@@ -117,6 +140,7 @@ public class TuringMachineRunner {
         symbols.add("3");
         symbols.add("4");
         symbols.add("5");
+        symbols.add("6");
         transition = new Transition(symbols, "epsilon", "R", "S13");
         s13Transitions.add(transition);
 
@@ -150,6 +174,7 @@ public class TuringMachineRunner {
         symbols.add("3");
         symbols.add("4");
         symbols.add("5");
+        symbols.add("6");
         transition = new Transition(symbols, "epsilon", "R", "S14");
         s14Transitions.add(transition);
 
@@ -183,6 +208,7 @@ public class TuringMachineRunner {
         symbols.add("3");
         symbols.add("4");
         symbols.add("5");
+        symbols.add("6");
         transition = new Transition(symbols, "epsilon", "R", "S15");
         s15Transitions.add(transition);
 
@@ -208,6 +234,40 @@ public class TuringMachineRunner {
 
 
 
+        ArrayList<Transition> s16Transitions = new ArrayList<>();
+
+        symbols = new ArrayList<>();
+        symbols.add("1");
+        symbols.add("2");
+        symbols.add("3");
+        symbols.add("4");
+        symbols.add("5");
+        symbols.add("6");
+        transition = new Transition(symbols, "epsilon", "R", "S16");
+        s16Transitions.add(transition);
+
+        symbols = new ArrayList<>();
+        symbols.add("null");
+        transition = new Transition(symbols, "5", "R", "S26");
+        s16Transitions.add(transition);
+
+        State s16State = new State("S16", s16Transitions, finalStates);
+
+
+
+
+        ArrayList<Transition> s26Transitions = new ArrayList<>();
+
+        symbols = new ArrayList<>();
+        symbols.add("null");
+        transition = new Transition(symbols, "5", "L", "S1");
+        s26Transitions.add(transition);
+
+        State s26State = new State("S26", s26Transitions, finalStates);
+
+
+
+
         ArrayList<Transition> s2Transitions = new ArrayList<>();
         State s2State = new State ("S2", s2Transitions, finalStates);
 
@@ -225,6 +285,8 @@ public class TuringMachineRunner {
         states.add(s24State);
         states.add(s15State);
         states.add(s25State);
+        states.add(s16State);
+        states.add(s26State);
 
 
         TuringMachine turingMachine = new TuringMachine(s0State, states, tape);
