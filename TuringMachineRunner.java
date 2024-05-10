@@ -278,17 +278,23 @@ public class TuringMachineRunner {
         states.add(s12State);
         states.add(s22State);
         states.add(s2State);
+
         states.add(s13State);
         states.add(s23State);
         states.add(s14State);
         states.add(s24State);
         states.add(s15State);
+        
         states.add(s25State);
         states.add(s16State);
         states.add(s26State);
 
 
         TuringMachine turingMachine = new TuringMachine(s0State, states, tape);
+        System.out.println("Number of States: " + states.size());
+        System.out.println("Alphabet: [null, 1, 2, 3, 4, 5, 6]");
+        System.out.println("Starting Tape: " + tape.toString());
+        System.out.println("Cardinality of Tape: " + startingTape.size());
 
         while (!(turingMachine.currentState.isFinalState())) {
             turingMachine.process(tape.read());
